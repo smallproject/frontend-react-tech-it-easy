@@ -2,6 +2,12 @@ h1 {
     font-size: 3em;
 }
 
+img {
+    height: 250px;
+    width: 300px;
+}
+
+
 .upper_container {
     display: flex;
     height: 300px;
@@ -47,6 +53,35 @@ h1 {
     background-color: lightcoral;
 }
 
-.lower_container {
+.second_lower_container {
+    height: 300px;
+    border: black 3px dashed;
+    border-radius: 10px;
+    background-color: darkgray;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.second_lower_container_img {
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    padding: 20px;
+}
+
+.second_lower_container_detail {
+    flex-grow: 2;
+    flex-shrink: 0;
+}
+
+
+.second_lower_container_option_details img{
+    height: 10px;
+    width: 10px;
+}
+
+
+.third_lower_container {
 
 }

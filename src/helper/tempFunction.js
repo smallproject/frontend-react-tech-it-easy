@@ -19,3 +19,7 @@ export function getStockCount () {
     console.log(count);
     return count;
 }
+
+export function getToBeSoldCount() {
+    return getStockCount() - getSoldCount();
+}
