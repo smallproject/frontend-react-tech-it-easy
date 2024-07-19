@@ -1,5 +1,5 @@
 import './App.css';
-import {getSoldCount ,getStockCount,getToBeSoldCount} from "./helper/tempFunction.js";
+import {getSoldCount ,getStockCount,getToBeSoldCount} from "./helper/getTVStatistics.js";
 import {
     displayBestBoughtTvName, displayBestTvAvailableSizes,
     displayBestTvPrice,
