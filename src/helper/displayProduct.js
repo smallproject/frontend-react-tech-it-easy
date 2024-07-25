@@ -10,8 +10,11 @@ export function displayProducts() {
 }
 
 export function displayAvailableSizes(tv) {
-    let text;
+    let text = "";
     for (let i = 0; i < tv.availableSizes.length; i++) {
+        // if (tv.availableSizes[i] === undefined) {
+        //     break;
+        // }
         text += `${tv.availableSizes[i]} inch (${tv.availableSizes[i]*2.54} cm) `;
     }
 

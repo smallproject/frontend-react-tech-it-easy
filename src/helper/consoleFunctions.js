@@ -1,6 +1,6 @@
 import {inventory} from "../constants/inventory.js";
 //opdracht 1 deel 2
-export function tempFunction () {
+export function consoleFunctions () {
     console.log("List of tv names");
     for (let i = 0; i < inventory.length; i++) {
         console.log(inventory[i].name);

@@ -77,11 +77,24 @@ img {
 
 
 .second_lower_container_option_details img{
-    height: 10px;
+    height: 12px;
     width: 10px;
 }
 
 
 .third_lower_container {
 
+}
+
+.option-list {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.option-list img {
+    height: 12px;
+    width: 10px;
 }
