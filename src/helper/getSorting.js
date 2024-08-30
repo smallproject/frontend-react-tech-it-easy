@@ -1,5 +1,3 @@
-import {inventory} from "../constants/inventory.js";
-
 export function consoleFunctions (inventorys) {
     console.log("List of tv names - sorting Most sold");
 
@@ -45,19 +43,6 @@ export function grootsteSchermgroottesEerst([...television]) {
         return sortTvSizes(currentTv) - sortTvSizes(previousTv);
     });
 
-    // // console.log(sortedTv);
-    // console.log("TV")
-    // console.log(inventory[6]);
-    //
-    // const sorted = inventory[6].availableSizes.sort((previousSize, currentSize) => {
-    //     return currentSize - previousSize;
-    // })
-    // console.log("Sorted");
-    // console.log(sorted);
-    // console.log("highest")
-    // console.log(sorted[0]);
-    //
-    // sortTvSizes();
 
     console.log(sortedTv);
     return sortedTv;

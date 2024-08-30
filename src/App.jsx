@@ -1,4 +1,8 @@
+// imported necessary class dependency
 import './App.css';
+import {useState} from "react";
+
+// imported helper functions
 import {getSoldCount ,getStockCount,getToBeSoldCount} from "./helper/getTVStatistics.js";
 import {
     displayAvailableSizes,
@@ -12,22 +16,13 @@ import {
     meestGeschiktVoorSportEerst,
     meestVerkochtEerst
 } from "./helper/getSorting.js";
-
-import {
-    consoleFunctions,
-    getSoldOutTV,
-    getAvailableTVOnSize,
-    getTvOnType,
-    getAvaialableTVOnRefreshRate, getAvailableTVOnAmbilightOption
-} from "./helper/consoleFunctions.js";
-
-// import styles from "./helper/styles.css";
-import "./helper/styles.css";
-import {bestSellingTv, inventory} from "./constants/inventory.js";
 import {getTvBrands, getTvNames, getTvTypes} from "./helper/getTvTypes.js";
+
+// imported constant files
+import {bestSellingTv, inventory} from "./constants/inventory.js";
+import "./helper/styles.css";
 import check from "./assets/check.png";
 import minus from "./assets/minus.png";
-import {useState} from "react";
 
 function App() {
 
@@ -36,7 +31,6 @@ function App() {
   const toBeSoldCount = getToBeSoldCount();
 
   const [televisions, setTelevision] = useState(inventory);
-  // const bestTvName = displayBestBoughtTvName();
 
     function setter(sorted) {
         setTelevision(sorted);
@@ -166,6 +160,7 @@ function App() {
                       </div>
 
 
+                      {/*console logs is hidden here*/}
                       <div>
                       {/*    /!*console logs begins here*!/*/}
                       {/*    /!*opdracht deel 2*!/*/}
