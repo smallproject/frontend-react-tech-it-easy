@@ -1,0 +1,102 @@
+/*===================== Global ==========================*/
+h1 {
+    font-size: 3em;
+}
+
+img {
+    height: 250px;
+    width: 300px;
+}
+
+main {
+    max-width: 1024px;
+}
+
+/*===================== Main Containers ==========================*/
+.upper_container {
+    display: flex;
+    height: 300px;
+
+    justify-content: space-evenly;
+    /*background-color: black;*/
+}
+
+.upper_container div {
+    border: black 3px solid;
+    font-size: large;
+    /*background-color: black;*/
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+}
+
+/*===================== Three Divs with ID's ==========================*/
+#sold {
+    color: green;
+    border: 3px solid green;
+    background-color: aquamarine;
+}
+
+#purchased {
+    color: blue;
+    border: 3px solid blue;
+    background-color: cornflowerblue;
+}
+
+#toBeSold {
+    color: red;
+    border: 3px solid red;
+    background-color: lightcoral;
+}
+
+/*===================== Repeated Product ==========================*/
+.product {
+    height: 300px;
+    border: black 3px dashed;
+    border-radius: 10px;
+    background-color: darkgray;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.product-image {
+    flex-grow: 1;
+    flex-shrink: 0;
+
+    padding: 20px;
+}
+
+.product-information {
+    flex-grow: 2;
+    flex-shrink: 0;
+}
+
+
+.second_lower_container_option_details img{
+    height: 12px;
+    width: 10px;
+}
+
+.option-list {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.option-list img {
+    height: 12px;
+    width: 10px;
+}

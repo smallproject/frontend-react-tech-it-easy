@@ -20,7 +20,7 @@ import {getTvBrands, getTvNames, getTvTypes} from "./helper/getTvTypes.js";
 
 // imported constant files
 import {bestSellingTv, inventory} from "./constants/inventory.js";
-import "./helper/styles.css";
+import "../src/App.css";
 import check from "./assets/check.png";
 import minus from "./assets/minus.png";
 
