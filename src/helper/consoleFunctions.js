@@ -8,6 +8,7 @@ export function consoleFunctions () {
 
 }
 
+// get list of sold out tv
 //opdracht 1b
 export function getSoldOutTV () {
     let soldOutCount = [];
@@ -43,6 +44,7 @@ function isTvType(tv) {
     return tv.type === "NH3216SMART";
 }
 
+// get tv on specific type
 //opdracht 1d
 export function getTvOnType() {
     let tv = inventory.find(isTvType);
@@ -53,6 +55,7 @@ function isRefreshRate(tv) {
     return tv.refreshRate >= 100;
 }
 
+// get tv on refresh rate
 //opdracht 1e
 export function getAvaialableTVOnRefreshRate() {
     let tv = inventory.find(isRefreshRate);
@@ -67,6 +70,7 @@ function isApplicable(tv) {
     return tv.options.applicable === true;
 }
 
+// get available tv on ambilight filter
 //opdracht 1f
 export function getAvailableTVOnAmbilightOption() {
     let tv = inventory.filter(isAmbilight).find(isApplicable);

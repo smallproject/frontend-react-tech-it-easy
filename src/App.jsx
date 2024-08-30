@@ -6,7 +6,12 @@ import {
     displayBestTvPrice, displayPrice, displayTvName,
 } from "./helper/displayProduct.js";
 
-import {goedKoopsteEerst, meestGeschiktVoorSportEerst, meestVerkochtEerst} from "./helper/getSorting.js";
+import {
+    goedKoopsteEerst,
+    grootsteSchermgroottesEerst,
+    meestGeschiktVoorSportEerst,
+    meestVerkochtEerst
+} from "./helper/getSorting.js";
 
 import {
     consoleFunctions,
@@ -22,13 +27,20 @@ import {bestSellingTv, inventory} from "./constants/inventory.js";
 import {getTvBrands, getTvNames, getTvTypes} from "./helper/getTvTypes.js";
 import check from "./assets/check.png";
 import minus from "./assets/minus.png";
+import {useState} from "react";
 
 function App() {
 
   const soldCount = getSoldCount();
   const stockCount = getStockCount();
   const toBeSoldCount = getToBeSoldCount();
+
+  const [televisions, setTelevision] = useState(inventory);
   // const bestTvName = displayBestBoughtTvName();
+
+    function setter(sorted) {
+        setTelevision(sorted);
+    }
 
   return (
       <>
@@ -116,32 +128,34 @@ function App() {
               <section>
                   <div className="third_lower_container">
                       <h2>Alle tvs</h2>
-                      <button onClick={meestVerkochtEerst}>Meest verkocht eerst</button>
-                      <button onClick={goedKoopsteEerst}>Goedkoopste eerst</button>
-                      <button onClick={meestGeschiktVoorSportEerst}>Meest geschikt voor sport eerst</button>
+                      <button onClick={() => setter(meestVerkochtEerst)}>Meest verkocht eerst</button>
+                      <button onClick={() => setter(goedKoopsteEerst)}>Goedkoopste eerst</button>
+                      <button onClick={() => setter(meestGeschiktVoorSportEerst)}>Meest geschikt voor sport eerst</button>
+                      <button onClick={() => setter(grootsteSchermgroottesEerst)}>Grootste schermgroottes eerst</button>
                       {getTvTypes()}
                       {getTvNames()}
                       {getTvBrands()}
+
                       <div>
 
 
-                          {inventory.map((tv) => {
+                          {televisions.map((televisions) => {
                               return (
-                                  <article key={tv.type} className="product" >
+                                  <article key={televisions.type} className="product" >
                                       <span className="product-image">
-                                          <img src={tv.sourceImg} alt="Afbeelding van het product"/>
+                                          <img src={televisions.originalStock === televisions.sold ? "src/assets/out-of-stock.png" : televisions.sourceImg} alt="Afbeelding van het product"/>
                                       </span>
 
                                       <div className="product-information">
-                                          <h3>{displayTvName(tv)}</h3>
-                                          <p className="product-price">{displayPrice(tv)}</p>
-                                          <p>{displayAvailableSizes(tv)}</p>
+                                          <h3>{displayTvName(televisions)}</h3>
+                                          <p className="product-price">{displayPrice(televisions)}</p>
+                                          <p>{displayAvailableSizes(televisions)}</p>
                                           <ul className="option-list">
-                                              {tv.options.map((option) => {
+                                              {televisions.options.map((option) => {
                                                   if (option.applicable === true) {
-                                                      return <li key={`${tv.type}-${option.name}`}><img src={check} alt="Icoon: aanwezig" className="icon"/>{option.name}</li>
+                                                      return <li key={`${televisions.type}-${option.name}`}><img src={check} alt="Icoon: aanwezig" className="icon"/>{option.name}</li>
                                                   } else {
-                                                      return <li key={`${tv.type}-${option.name}`}><img src={minus} alt="Icoon: niet aanwezig" className="icon"/>{option.name}</li>
+                                                      return <li key={`${televisions.type}-${option.name}`}><img src={minus} alt="Icoon: niet aanwezig" className="icon"/>{option.name}</li>
                                                   }
                                               })}
                                           </ul>
@@ -167,6 +181,8 @@ function App() {
           </main>
       </>
   )
+
+
 }
 
 export default App
