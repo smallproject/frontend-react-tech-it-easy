@@ -7,6 +7,9 @@ img {
     width: 300px;
 }
 
+main {
+    max-width: 1024px;
+}
 
 .upper_container {
     display: flex;
@@ -53,7 +56,7 @@ img {
     background-color: lightcoral;
 }
 
-.second_lower_container {
+.product {
     height: 300px;
     border: black 3px dashed;
     border-radius: 10px;
@@ -63,14 +66,14 @@ img {
     flex-direction: row;
 }
 
-.second_lower_container_img {
+.product-image {
     flex-grow: 1;
     flex-shrink: 0;
 
     padding: 20px;
 }
 
-.second_lower_container_detail {
+.product-information {
     flex-grow: 2;
     flex-shrink: 0;
 }
